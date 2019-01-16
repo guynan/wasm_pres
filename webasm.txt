@@ -1,0 +1,81 @@
+Webassembly Talk;
+
+
+# What is Wasm?
+
+We have a valiant attempt by the W3C and commercial collaborators such as
+Mozilla, Google, Microsoft to produce an interface standard for execution of
+near native code within the browser environment. This allows Webdevelopment to
+cross into a new frontier of more responsive webapps, with more fluid
+performance, whilst draining less power and being able to leverage features
+that are currently inaccessible from our current interpreted fleet (JS, PHP)
+
+This project has lofty goals and I am sure we are all looking forward to
+segmentation faults in webapps to come!
+
+# Current language support
+
+* C
+* C++ (Different lines for different languages)
+* Rust
+
+# How it works
+
+
+#What Webassembly is not
+
+* It is currently, and intends *not* to be a drop in replacement for Javascript;
+it is merely used as a tool to supplement the performance differences (note,
+not concerns for JS provides an efficient web interface but in *some*
+situations allows for near native performance.)
+
+* It is not a complete implementation unto itself, rather a specification 
+
+* This is absolutely not a reheat of the infamously shitty Java plugin that so
+  plagued our browsers in the bad old days. This defines an open standard
+which is not (directly) corporately controlled. 
+
+// Include OSRS reference 
+
+
+# Sexy Features
+
+* One of the nicest implementation details I have seen is support for a 32-bit
+  pointer width. In languages like C/C++ on conventional 64 bit architectures,
+the pointer size is the word width. This is obviously a necessity for you want
+to be able to access every addressable location, however, apps created will be
+allocated a virtual address space within the sandboxed environment which if
+you know shan't exceed 4GB (i.e most applications), you can get _serious_
+memory savings from using the 32 bit pointer which can not just provide a
+smaller memory footprint but additionally performance enhancements by
+presumably better structure packing, less padding & better alignment, and
+fewer cache misses. VERY SEXY
+
+* Currently supported by the four major browsers. This is a sexy feature
+  because *even* Microsoft Edge supports it.
+
+* Proper threading! JS can emulate multitasking, however the utility offered
+  by native and well managed threads can revolutionise asynchronous behaviour
+on the web. Sexiness here is that we can now do things properly by not 
+
+# Security
+
+* There were some murmurs from random tech journalists about running binaries
+  in ones browser and how this is a security issue. Just no???? Wasm runs in a
+sandboxed environment that is effectively a free standing virtual machine.
+
+# Use cases... Where is the value!?
+
+* I think initially there will be no major jump to start using it for the
+  product itself is not massively stable nor feature rich. However, as players
+do start producing webapps with wasm technologies and that becomes more
+pervasive within the market, it is my belief that consumers will crave the
+features that it has to offer.
+
+* Pull out the most exciting ones from /docs/use-cases/ on wasm site
+
+
+# What we have to look forward to
+
+* Promised better and more intuitive interfaces for both calling this code and
+  also interacting with the DOM
